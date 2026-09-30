@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JARVIS Trading</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <div class="logo">JARVIS <span>TRADING</span></div>
+  <button onclick="login()">Login</button>
+</header>
+
+<nav>
+  <button onclick="showPage('dashboard')">Dashboard</button>
+  <button onclick="showPage('markets')">Markets</button>
+  <button onclick="showPage('paper')">Paper Trade</button>
+  <button onclick="showPage('jarvis')">🤖 Jarvis</button>
+  <button onclick="showPage('learn')">Academy</button>
+  <button onclick="showPage('community')">Community</button>
+</nav>
+
+<main>
+<section id="dashboard" class="page active">
+<h1>Trading Dashboard</h1>
+<div class="cards">
+  <div><small>Portfolio</small><strong id="total">$100,000.00</strong></div>
+  <div><small>Cash</small><strong id="cash">$100,000.00</strong></div>
+  <div><small>Positions</small><strong id="count">0</strong></div>
+</div>
+<h2>Positions</h2>
+<div id="positions" class="table"></div>
+</section>
+
+<section id="markets" class="page">
+<h1>Markets</h1>
+<div class="search">
+  <input id="marketSymbol" value="AAPL" placeholder="AAPL, TSLA, NVDA...">
+  <button onclick="quote()">Search</button>
+</div>
+<div id="quoteBox" class="panel">Enter a symbol to view market data.</div>
+</section>
+
+<section id="paper" class="page">
+<h1>Paper Trading</h1>
+<p class="notice">Virtual money only. No real trades are sent to a broker.</p>
+<div class="panel">
+  <input id="tradeSymbol" value="AAPL" placeholder="Symbol">
+  <input id="tradeShares" type="number" min="1" value="1" placeholder="Shares">
+  <div class="row">
+    <button class="buy" onclick="trade('BUY')">BUY</button>
+    <button class="sell" onclick="trade('SELL')">SELL</button>
+  </div>
+  <div id="tradeMsg"></div>
+</div>
+</section>
+
+<section id="jarvis" class="page">
+<h1>🤖 Jarvis</h1>
+<div id="chat" class="chat">
+  <div class="jarvis">Hello. I'm Jarvis. Ask me about trading concepts, charts or risk management.</div>
+</div>
+<div class="composer">
+  <input id="question" placeholder="Ask Jarvis...">
+  <button onclick="askJarvis()">Send</button>
+</div>
+</section>
+
+<section id="learn" class="page">
+<h1>📚 Trading Academy</h1>
+<div class="lessons">
+  <article><b>01 — Trading Basics</b><p>Stocks, exchanges, orders, bid and ask prices.</p></article>
+  <article><b>02 — Candlesticks</b><p>Open, high, low and close explained.</p></article>
+  <article><b>03 — Support & Resistance</b><p>Understand important price levels.</p></article>
+  <article><b>04 — Risk Management</b><p>Position sizing, stop losses and risk/reward.</p></article>
+  <article><b>05 — Technical Analysis</b><p>Learn indicators and their limitations.</p></article>
+</div>
+</section>
+
+<section id="community" class="page">
+<h1>👥 Community</h1>
+<textarea id="post" placeholder="Share a tutorial, question or idea..."></textarea>
+<button onclick="post()">Post</button>
+<div id="posts"></div>
+</section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
