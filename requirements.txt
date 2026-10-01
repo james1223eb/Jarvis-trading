@@ -1,0 +1,4 @@
+Flask>=3.0
+yfinance>=0.2.40
+gunicorn>=23.0
+openai>=1.0
